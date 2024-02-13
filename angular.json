@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "employee-frontend": {
+    "employeeAngular": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/employee-frontend",
+            "outputPath": "dist/employee-angular",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -68,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "employee-frontend:build:production"
+              "buildTarget": "employeeAngular:build:production"
             },
             "development": {
-              "buildTarget": "employee-frontend:build:development"
+              "buildTarget": "employeeAngular:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "employee-frontend:build"
+            "buildTarget": "employeeAngular:build"
           }
         },
         "test": {
@@ -104,6 +114,6 @@
     }
   },
   "cli": {
-    "analytics": "8e77c337-8956-41b9-bdbf-d49108da52fe"
+    "analytics": "95b54e6c-7e62-4088-a92a-731c717e9bd6"
   }
 }
